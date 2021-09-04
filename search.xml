@@ -4,7 +4,7 @@
   
     
     <entry>
-      <title>hexo-prism-plugin</title>
+      <title>Hexo插件之hexo-prism-plugin</title>
       <link href="/2021/09/04/Hexo%E6%8F%92%E4%BB%B6%E4%B9%8Bhexo-prism-plugin/"/>
       <url>/2021/09/04/Hexo%E6%8F%92%E4%BB%B6%E4%B9%8Bhexo-prism-plugin/</url>
       
@@ -29,11 +29,11 @@
     
     
     <entry>
-      <title>snap常见错误及解决方法</title>
+      <title>snap包管理器之常见错误</title>
       <link href="/2021/09/04/snap%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8%E4%B9%8B%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF/"/>
       <url>/2021/09/04/snap%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8%E4%B9%8B%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF/</url>
       
-        <content type="html"><![CDATA[<h3 id="使用-snap-安装软件时返回错误信息"><a href="#使用-snap-安装软件时返回错误信息" class="headerlink" title="使用 snap 安装软件时返回错误信息"></a>使用 snap 安装软件时返回错误信息</h3><p>错误关键字如下:</p><pre class="line-numbers language-bash"><code class="language-bash">dial unix  /run/snapd.socket: connect: no such <span class="token function">file</span> or directory<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>解决方法是重启本地 snap 服务, 命令如下:</p><pre class="line-numbers language-bash"><code class="language-bash">$: <span class="token function">sudo</span> systemctl restart snapd.service    //重启本地 snap 服务<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
+        <content type="html"><![CDATA[<h3 id="使用-snap-安装软件时返回错误信息"><a href="#使用-snap-安装软件时返回错误信息" class="headerlink" title="使用 snap 安装软件时返回错误信息"></a>使用 snap 安装软件时返回错误信息</h3><p>输出的错误信息中包含如下关键字:</p><pre class="line-numbers language-bash"><code class="language-bash">dial unix  /run/snapd.socket: connect: no such <span class="token function">file</span> or directory<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><p>解决方法是重启本地 snap 服务, 命令如下:</p><pre class="line-numbers language-bash"><code class="language-bash">$: <span class="token function">sudo</span> systemctl restart snapd.service    //重启本地 snap 服务<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
       
       
       <categories>
@@ -54,7 +54,7 @@
     
     
     <entry>
-      <title>GDB调试命令</title>
+      <title>gdb调试之基础命令</title>
       <link href="/2021/09/04/gdb%E8%B0%83%E8%AF%95%E4%B9%8B%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/"/>
       <url>/2021/09/04/gdb%E8%B0%83%E8%AF%95%E4%B9%8B%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</url>
       
@@ -79,11 +79,11 @@
     
     
     <entry>
-      <title>Chrome和Edge浏览器离线下载</title>
+      <title>Chrome和Edge下载离线安装程序</title>
       <link href="/2021/09/01/Chrome%E5%92%8CEdge%E4%B8%8B%E8%BD%BD%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F/"/>
       <url>/2021/09/01/Chrome%E5%92%8CEdge%E4%B8%8B%E8%BD%BD%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85%E7%A8%8B%E5%BA%8F/</url>
       
-        <content type="html"><![CDATA[<h3 id="Google-Chrome-离线下载地址-x64-windows"><a href="#Google-Chrome-离线下载地址-x64-windows" class="headerlink" title="Google Chrome 离线下载地址(x64_windows):"></a>Google Chrome 离线下载地址(x64_windows):</h3><pre class="line-numbers language-bash"><code class="language-bash">https://www.google.com/chrome/browser/index.html?standalone<span class="token operator">=</span>1<span class="token operator">&amp;</span>platform<span class="token operator">=</span>win64<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="Google-Chrome-离线下载地址-x86-windows"><a href="#Google-Chrome-离线下载地址-x86-windows" class="headerlink" title="Google Chrome 离线下载地址(x86_windows):"></a>Google Chrome 离线下载地址(x86_windows):</h3><pre class="line-numbers language-bash"><code class="language-bash">https://www.google.com/chrome/browser/index.html?standalone<span class="token operator">=</span>1<span class="token operator">&amp;</span>platform<span class="token operator">=</span>win<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="Microsoft-Edge-浏览器离线下载地址"><a href="#Microsoft-Edge-浏览器离线下载地址" class="headerlink" title="Microsoft Edge 浏览器离线下载地址:"></a>Microsoft Edge 浏览器离线下载地址:</h3><pre class="line-numbers language-bash"><code class="language-bash">https://www.microsoft.com/zh-cn/edge/business/download<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
+        <content type="html"><![CDATA[<h3 id="Google-Chrome-离线下载地址-x64-windows-需要梯子"><a href="#Google-Chrome-离线下载地址-x64-windows-需要梯子" class="headerlink" title="Google Chrome 离线下载地址(x64_windows), 需要梯子:"></a>Google Chrome 离线下载地址(x64_windows), 需要梯子:</h3><pre class="line-numbers language-bash"><code class="language-bash">https://www.google.com/chrome/browser/index.html?standalone<span class="token operator">=</span>1<span class="token operator">&amp;</span>platform<span class="token operator">=</span>win64<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="Google-Chrome-离线下载地址-x86-windows-需要梯子"><a href="#Google-Chrome-离线下载地址-x86-windows-需要梯子" class="headerlink" title="Google Chrome 离线下载地址(x86_windows), 需要梯子:"></a>Google Chrome 离线下载地址(x86_windows), 需要梯子:</h3><pre class="line-numbers language-bash"><code class="language-bash">https://www.google.com/chrome/browser/index.html?standalone<span class="token operator">=</span>1<span class="token operator">&amp;</span>platform<span class="token operator">=</span>win<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre><h3 id="Microsoft-Edge-浏览器离线下载地址"><a href="#Microsoft-Edge-浏览器离线下载地址" class="headerlink" title="Microsoft Edge 浏览器离线下载地址:"></a>Microsoft Edge 浏览器离线下载地址:</h3><pre class="line-numbers language-bash"><code class="language-bash">https://www.microsoft.com/zh-cn/edge/business/download<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>]]></content>
       
       
       <categories>
