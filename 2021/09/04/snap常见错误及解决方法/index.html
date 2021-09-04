@@ -8,7 +8,8 @@
 @font-face {
  font-family: 'JetBrains Mono';
  src: local('JetBrains Mono'), url('/font/JetBrainsMono-Regular.woff2') format('woff2');
-}</style><meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head><body><header><nav><a href="/">Home</a><a href="/Tools/">Tools</a><a href="/archives/">Archives</a></nav></header><main><article><div id="post-bg"><div id="post-title"><h1>snap常见错误及解决方法</h1><hr></div><div id="post-content"><h3 id="使用-snap-安装软件时返回错误信息"><a href="#使用-snap-安装软件时返回错误信息" class="headerlink" title="使用 snap 安装软件时返回错误信息"></a>使用 snap 安装软件时返回错误信息</h3><p>错误关键字如下:</p>
+}</style><meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head><body><header><nav><a href="/">Home</a><a href="/Tools/">Tools</a><a href="/archives/">Archives</a></nav></header><main><article><div id="post-bg"><div id="post-title"><h1>snap常见错误及解决方法</h1><hr></div><div id="post-content"><h3 id="使用-snap-安装软件时返回错误信息"><a href="#使用-snap-安装软件时返回错误信息" class="headerlink" title="使用 snap 安装软件时返回错误信息"></a>使用 snap 安装软件时返回错误信息</h3><p>错误关键字如下:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dial unix  /run/snapd.socket: connect: no such file or directory</span><br></pre></td></tr></table></figure>
 <p>解决方法是重启本地 snap 服务, 命令如下:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$: sudo systemctl restart snapd.service    //重启本地 snap 服务</span><br></pre></td></tr></table></figure>
