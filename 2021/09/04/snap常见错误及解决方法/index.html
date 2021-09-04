@@ -9,10 +9,7 @@
   <title>snap常见错误及解决方法 | LFly3&#39;s Blog</title>
   <meta name="author" content="LFly3">
   
-  <meta name="description" content="使用 snap 安装软件时返回错误信息错误关键字如下:
-1dial unix  /run/snapd.socket: connect: no such file or directory
-解决方法是重启本地 snap 服务, 命令如下:
-1$: sudo systemctl restart snapd.service    //重启本地 snap 服务"> 
+  <meta name="description" content="LFly3&#39;s Blog">
   
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -56,8 +53,7 @@
 
 
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-okaidia.css" type="text/css"></head>
 
  <body>  
   <nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -133,9 +129,9 @@
 	  		
 
 	  <h3 id="使用-snap-安装软件时返回错误信息"><a href="#使用-snap-安装软件时返回错误信息" class="headerlink" title="使用 snap 安装软件时返回错误信息"></a>使用 snap 安装软件时返回错误信息</h3><p>错误关键字如下:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">dial unix  /run/snapd.socket: connect: no such file or directory<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">dial unix  &#x2F;run&#x2F;snapd.socket: connect: no such file or directory<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>解决方法是重启本地 snap 服务, 命令如下:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$: sudo systemctl restart snapd.service    //重启本地 snap 服务<br></code></pre></td></tr></table></figure>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$: sudo systemctl restart snapd.service    &#x2F;&#x2F;重启本地 snap 服务<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 	  <div class="article-footer-copyright">
 
