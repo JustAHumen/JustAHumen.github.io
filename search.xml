@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>TestCodeHighlight</title>
+      <link href="/2021/09/04/TestCodeHighlight/"/>
+      <url>/2021/09/04/TestCodeHighlight/</url>
+      
+        <content type="html"><![CDATA[<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs c#">#include &lt;stdio.h&gt;<br><br>int main(void)<br>&#123;<br>        printf(&quot;Hello World!&quot;);<br><br>        return 0;<br>&#125;<br></code></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>snap常见错误及解决方法</title>
+      <link href="/2021/09/04/snap%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
+      <url>/2021/09/04/snap%E5%B8%B8%E8%A7%81%E9%94%99%E8%AF%AF%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</url>
+      
+        <content type="html"><![CDATA[<h3 id="使用-snap-安装软件时返回错误信息"><a href="#使用-snap-安装软件时返回错误信息" class="headerlink" title="使用 snap 安装软件时返回错误信息"></a>使用 snap 安装软件时返回错误信息</h3><p>错误关键字如下:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">dial unix  /run/snapd.socket: connect: no such file or directory<br></code></pre></td></tr></table></figure><p>解决方法是重启本地 snap 服务, 命令如下:</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$: sudo systemctl restart snapd.service    //重启本地 snap 服务<br></code></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> snap </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>GDB调试命令</title>
+      <link href="/2021/09/04/GDB%E8%B0%83%E8%AF%95%E5%91%BD%E4%BB%A4/"/>
+      <url>/2021/09/04/GDB%E8%B0%83%E8%AF%95%E5%91%BD%E4%BB%A4/</url>
+      
+        <content type="html"><![CDATA[<h2 id="GDB调试基础命令"><a href="#GDB调试基础命令" class="headerlink" title="GDB调试基础命令"></a>GDB调试基础命令</h2><table><thead><tr><th align="left">命令</th><th align="left">描述</th></tr></thead><tbody><tr><td align="left">list</td><td align="left">列出源代码，接着上次的位置往下列，每次列10行</td></tr><tr><td align="left">list 行号</td><td align="left">列出从几行开始的源代码</td></tr><tr><td align="left">start</td><td align="left">开始执行程序</td></tr><tr><td align="left">help</td><td align="left">查看帮助</td></tr><tr><td align="left">info</td><td align="left">查看变量的值</td></tr><tr><td align="left">info locals</td><td align="left">查看局部变量的值</td></tr><tr><td align="left">backtrace</td><td align="left">查看各级函数及调用参数</td></tr><tr><td align="left">frame 栈帧号</td><td align="left">选择栈帧</td></tr><tr><td align="left">next</td><td align="left">执行下一行语句</td></tr><tr><td align="left">step</td><td align="left">执行下一行语句，如果有函数调用则进入到函数中</td></tr><tr><td align="left">finish</td><td align="left">让程序一直运行到从当前函数返回为止</td></tr><tr><td align="left">set var 变量=值</td><td align="left">修改变量的值, 修改变量的值除了用set命令之外也可以用print命令，因为print命令后面跟的是表达式，而我们知道赋值和函数调用也都是表达式，所以也可以用print命令修改变量的值或者调用函数</td></tr><tr><td align="left">display 变量名</td><td align="left">跟踪查看某个变量，每次停下来都显示它的值</td></tr><tr><td align="left">undisplay 跟踪显示号</td><td align="left">取消跟踪显示变量值</td></tr><tr><td align="left">breakpoint</td><td align="left">设置断点</td></tr><tr><td align="left">continue</td><td align="left">连续运行程序而非单步运行</td></tr><tr><td align="left">info breakpoints</td><td align="left">查看已经设置的断点</td></tr><tr><td align="left">delete breakpoint 断点编号</td><td align="left">删除某个断点</td></tr><tr><td align="left">disable breakpoint 断点编号</td><td align="left">禁用某个断点</td></tr><tr><td align="left">run</td><td align="left">从头开始连续运行程序</td></tr><tr><td align="left">break 函数名</td><td align="left">在某个函数开头设置断点</td></tr><tr><td align="left">break … if …</td><td align="left">设置条件断点</td></tr><tr><td align="left">print *数组名称@长度</td><td align="left">查看数组各项的值，例如：print *array@5</td></tr><tr><td align="left">watch</td><td align="left">设置观察点</td></tr><tr><td align="left">info watchpoints</td><td align="left">查看当前设置了哪些观察点</td></tr><tr><td align="left">x</td><td align="left">从某个位置开始打印存储单元的内容，全部当成字节来看，而不区分哪个字节属于哪个变量。例如：x/7b，7b是打印格式，b表示每个字节一组，7表示打印7组</td></tr><tr><td align="left"></td><td align="left"></td></tr></tbody></table>]]></content>
+      
+      
+      <categories>
+          
+          <category> Linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> gdb </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Chrome和Edge浏览器离线下载</title>
+      <link href="/2021/09/01/%E8%8E%B7%E5%8F%96Chrome%E5%92%8CEdge%E6%B5%8F%E8%A7%88%E5%99%A8%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85%E5%8C%85/"/>
+      <url>/2021/09/01/%E8%8E%B7%E5%8F%96Chrome%E5%92%8CEdge%E6%B5%8F%E8%A7%88%E5%99%A8%E7%A6%BB%E7%BA%BF%E5%AE%89%E8%A3%85%E5%8C%85/</url>
+      
+        <content type="html"><![CDATA[<h3 id="Google-Chrome-离线下载地址-x64-windows"><a href="#Google-Chrome-离线下载地址-x64-windows" class="headerlink" title="Google Chrome 离线下载地址(x64_windows):"></a>Google Chrome 离线下载地址(x64_windows):</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++">https:<span class="hljs-comment">//www.google.com/chrome/browser/index.html?standalone=1&amp;platform=win64</span><br></code></pre></td></tr></table></figure><h3 id="Google-Chrome-离线下载地址-x86-windows"><a href="#Google-Chrome-离线下载地址-x86-windows" class="headerlink" title="Google Chrome 离线下载地址(x86_windows):"></a>Google Chrome 离线下载地址(x86_windows):</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++">https:<span class="hljs-comment">//www.google.com/chrome/browser/index.html?standalone=1&amp;platform=win</span><br></code></pre></td></tr></table></figure><h3 id="Microsoft-Edge-浏览器离线下载地址"><a href="#Microsoft-Edge-浏览器离线下载地址" class="headerlink" title="Microsoft Edge 浏览器离线下载地址:"></a>Microsoft Edge 浏览器离线下载地址:</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c++">https:<span class="hljs-comment">//www.microsoft.com/zh-cn/edge/business/download</span><br></code></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 软件下载 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Browser </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2021/08/29/hello-world/"/>
+      <url>/2021/08/29/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>
