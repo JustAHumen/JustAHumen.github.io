@@ -53,7 +53,8 @@
 
 
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-okaidia.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --><link rel="stylesheet" href="/css/prism-gruvbox-dark.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
  <body>  
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -129,9 +130,11 @@
 	  		
 
 	  <h3 id="使用-snap-安装软件时返回错误信息"><a href="#使用-snap-安装软件时返回错误信息" class="headerlink" title="使用 snap 安装软件时返回错误信息"></a>使用 snap 安装软件时返回错误信息</h3><p>错误关键字如下:</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">dial unix  &#x2F;run&#x2F;snapd.socket: connect: no such file or directory<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">dial unix  /run/snapd.socket: connect: no such <span class="token function">file</span> or directory
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>解决方法是重启本地 snap 服务, 命令如下:</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$: sudo systemctl restart snapd.service    &#x2F;&#x2F;重启本地 snap 服务<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">$: <span class="token function">sudo</span> systemctl restart snapd.service    //重启本地 snap 服务
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 	  <div class="article-footer-copyright">
 

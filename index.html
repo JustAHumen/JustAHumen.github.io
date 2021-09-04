@@ -53,7 +53,8 @@
 
 
 
-<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism-okaidia.css" type="text/css"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --><link rel="stylesheet" href="/css/prism-gruvbox-dark.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
  <body>  
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><nav id="main-nav" class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -136,6 +137,204 @@
 <div class="row">
 	<div class="col-md-8">
 		<h3 class="title">
+			<a href="/2021/09/04/hexo-prism-plugin/" >hexo-prism-plugin</a>
+		</h3>
+		</div>
+	<div class="col-md-4">
+		<div class="date">post @ 2021-09-04  </div>
+		</div>
+	</div>
+	
+
+
+			<!--
+<div class="entry">
+  <div class="row">
+	
+	
+		<h3 id="首次配置-Hexo-并使用-hexo-prism-plugin-代码高亮插件"><a href="#首次配置-Hexo-并使用-hexo-prism-plugin-代码高亮插件" class="headerlink" title="首次配置 Hexo 并使用 hexo-prism-plugin 代码高亮插件"></a>首次配置 Hexo 并使用 hexo-prism-plugin 代码高亮插件</h3><ol>
+<li><p>安装 <code>hexo-prism-plugin</code> 插件, 并且需要同时安装 <code>hexo-inject</code> 插件, 命令如下:</p>
+<pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">npm</span> <span class="token function">install</span> hexo-prism-plugin --save
+$ <span class="token function">npm</span> <span class="token function">install</span> hexo-inject --save
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+<li><p>修改 <code>_config.yml</code> 配置文件, 禁用 Hexo 的 highlight 如下（将 highlight 的 enable 修改为 false）:</p>
+<pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">highlight</span><span class="token punctuation">:</span>
+<span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+<li><p>禁用 Hexo 的 prismjs 配置, 如下（直接注释）:</p>
+<pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token comment" spellcheck="true">#prismjs:</span>
+<span class="token comment" spellcheck="true">#  enable: true</span>
+<span class="token comment" spellcheck="true">#  preprocess: true</span>
+<span class="token comment" spellcheck="true">#  line_number: true</span>
+<span class="token comment" spellcheck="true">#  tab_replace: ''</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>在配置文件 <code>_config.yml</code> 的最后一行后面追加以下内容:</p>
+<pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">prism_plugin</span><span class="token punctuation">:</span>
+<span class="token key atrule">mode</span><span class="token punctuation">:</span> <span class="token string">'preprocess'</span>    <span class="token comment" spellcheck="true">#realtime/preprocess</span>
+<span class="token key atrule">theme</span><span class="token punctuation">:</span> <span class="token string">'gruvbox-dark'</span> <span class="token comment" spellcheck="true">#这是prism插件的代码高亮主题，根据个人喜好修改</span>
+<span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">preprocess</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">line_number</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">tab_replace</span><span class="token punctuation">:</span> <span class="token string">''</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ol>
+<h3 id="使用插件过程中遇到的配置错误问题"><a href="#使用插件过程中遇到的配置错误问题" class="headerlink" title="使用插件过程中遇到的配置错误问题"></a><strong>使用插件过程中遇到的配置错误问题</strong></h3><p>安装 <code>hexo-prism-plugin</code> 插件后, 修改 <code>_config.yml</code> 配置文件时引用了不存在的主题名称, 报错如下:</p>
+<pre class="line-numbers language-bash"><code class="language-bash">$: hexo g
+INFO  Validating config
+ERROR <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+  err: Error: Invalid theme Gruvbox Dark. Valid Themes: 
+  coy,dark,funky,okaidia,solarizedlight,tomorrow,twilight,a11y-dark,atom-dark,base16-ateliersulphurpool.light,cb,coldark-cold,coldark-dark,coy-without-shadows,darcula,dracula,duotone-dark,duotone-earth,duotone-forest,duotone-light,duotone-sea,duotone-space,ghcolors,gruvbox-dark,gruvbox-light,holi-theme,hopscotch,lucario,material-dark,material-light,material-oceanic,night-owl,nord,pojoaque,shades-of-purple,synthwave84,vs,vsc-dark-plus,xonokai,default,
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>如上，在执行 <code>hexo g</code> 命令时出现的错误信息可知, <code>hexo-prism-plugin</code> 允许修改为以下列表中的主题名称:</p>
+<pre class="line-numbers language-bash"><code class="language-bash">coy
+dark
+funky
+okaidia
+solarizedlight
+tomorrow
+twilight
+a11y-dark
+atom-dark
+base16-ateliersulphurpool.light
+cb
+coldark-cold
+coldark-dark
+coy-without-shadows
+darcula
+dracula
+duotone-dark
+duotone-earth
+duotone-forest
+duotone-light
+duotone-sea
+duotone-space
+ghcolors
+gruvbox-dark
+gruvbox-light
+holi-theme
+hopscotch
+lucario
+material-dark
+material-light
+material-oceanic
+night-owl
+nord
+pojoaque
+shades-of-purple
+synthwave84
+vs
+vsc-dark-plus
+xonokai
+default
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+	
+
+	</div>
+  <a type="button" href="/2021/09/04/hexo-prism-plugin/#more" class="btn btn-default more">Read More</a>
+</div>
+
+-->
+<div class="entry">
+  <div class="row">
+	
+	
+		<h3 id="首次配置-Hexo-并使用-hexo-prism-plugin-代码高亮插件"><a href="#首次配置-Hexo-并使用-hexo-prism-plugin-代码高亮插件" class="headerlink" title="首次配置 Hexo 并使用 hexo-prism-plugin 代码高亮插件"></a>首次配置 Hexo 并使用 hexo-prism-plugin 代码高亮插件</h3><ol>
+<li><p>安装 <code>hexo-prism-plugin</code> 插件, 并且需要同时安装 <code>hexo-inject</code> 插件, 命令如下:</p>
+<pre class="line-numbers language-bash"><code class="language-bash">$ <span class="token function">npm</span> <span class="token function">install</span> hexo-prism-plugin --save
+$ <span class="token function">npm</span> <span class="token function">install</span> hexo-inject --save
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+<li><p>修改 <code>_config.yml</code> 配置文件, 禁用 Hexo 的 highlight 如下（将 highlight 的 enable 修改为 false）:</p>
+<pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">highlight</span><span class="token punctuation">:</span>
+<span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+</li>
+<li><p>禁用 Hexo 的 prismjs 配置, 如下（直接注释）:</p>
+<pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token comment" spellcheck="true">#prismjs:</span>
+<span class="token comment" spellcheck="true">#  enable: true</span>
+<span class="token comment" spellcheck="true">#  preprocess: true</span>
+<span class="token comment" spellcheck="true">#  line_number: true</span>
+<span class="token comment" spellcheck="true">#  tab_replace: ''</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+<li><p>在配置文件 <code>_config.yml</code> 的最后一行后面追加以下内容:</p>
+<pre class="line-numbers language-yaml"><code class="language-yaml"><span class="token key atrule">prism_plugin</span><span class="token punctuation">:</span>
+<span class="token key atrule">mode</span><span class="token punctuation">:</span> <span class="token string">'preprocess'</span>    <span class="token comment" spellcheck="true">#realtime/preprocess</span>
+<span class="token key atrule">theme</span><span class="token punctuation">:</span> <span class="token string">'gruvbox-dark'</span> <span class="token comment" spellcheck="true">#这是prism插件的代码高亮主题，根据个人喜好修改</span>
+<span class="token key atrule">enable</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">preprocess</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">line_number</span><span class="token punctuation">:</span> <span class="token boolean important">true</span>
+<span class="token key atrule">tab_replace</span><span class="token punctuation">:</span> <span class="token string">''</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+</li>
+</ol>
+<h3 id="使用插件过程中遇到的配置错误问题"><a href="#使用插件过程中遇到的配置错误问题" class="headerlink" title="使用插件过程中遇到的配置错误问题"></a><strong>使用插件过程中遇到的配置错误问题</strong></h3><p>安装 <code>hexo-prism-plugin</code> 插件后, 修改 <code>_config.yml</code> 配置文件时引用了不存在的主题名称, 报错如下:</p>
+<pre class="line-numbers language-bash"><code class="language-bash">$: hexo g
+INFO  Validating config
+ERROR <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+  err: Error: Invalid theme Gruvbox Dark. Valid Themes: 
+  coy,dark,funky,okaidia,solarizedlight,tomorrow,twilight,a11y-dark,atom-dark,base16-ateliersulphurpool.light,cb,coldark-cold,coldark-dark,coy-without-shadows,darcula,dracula,duotone-dark,duotone-earth,duotone-forest,duotone-light,duotone-sea,duotone-space,ghcolors,gruvbox-dark,gruvbox-light,holi-theme,hopscotch,lucario,material-dark,material-light,material-oceanic,night-owl,nord,pojoaque,shades-of-purple,synthwave84,vs,vsc-dark-plus,xonokai,default,
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>如上，在执行 <code>hexo g</code> 命令时出现的错误信息可知, <code>hexo-prism-plugin</code> 允许修改为以下列表中的主题名称:</p>
+<pre class="line-numbers language-bash"><code class="language-bash">coy
+dark
+funky
+okaidia
+solarizedlight
+tomorrow
+twilight
+a11y-dark
+atom-dark
+base16-ateliersulphurpool.light
+cb
+coldark-cold
+coldark-dark
+coy-without-shadows
+darcula
+dracula
+duotone-dark
+duotone-earth
+duotone-forest
+duotone-light
+duotone-sea
+duotone-space
+ghcolors
+gruvbox-dark
+gruvbox-light
+holi-theme
+hopscotch
+lucario
+material-dark
+material-light
+material-oceanic
+night-owl
+nord
+pojoaque
+shades-of-purple
+synthwave84
+vs
+vsc-dark-plus
+xonokai
+default
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+	
+	</div>
+  <a type="button" href="/2021/09/04/hexo-prism-plugin/#more" class="btn btn-default more">Read More</a>
+</div>
+
+		
+			
+	
+	<!-- display as entry -->
+<div class="row">
+	<div class="col-md-8">
+		<h3 class="title">
 			<a href="/2021/09/04/TestCodeHighlight/" >TestCodeHighlight</a>
 		</h3>
 		</div>
@@ -151,14 +350,15 @@
   <div class="row">
 	
 	
-		<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;stdio.h&gt;
+		<pre class="line-numbers language-c++"><code class="language-c++">#include <stdio.h>
 
 int main(void)
 &#123;
-        printf(&quot;Hello World!&quot;);
+        printf("Hello World!");
 
         return 0;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+&#125;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></stdio.h></code></pre>
 
 	
 
@@ -171,14 +371,15 @@ int main(void)
   <div class="row">
 	
 	
-		<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">#include &lt;stdio.h&gt;
+		<pre class="line-numbers language-c++"><code class="language-c++">#include <stdio.h>
 
 int main(void)
 &#123;
-        printf(&quot;Hello World!&quot;);
+        printf("Hello World!");
 
         return 0;
-&#125;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+&#125;
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></stdio.h></code></pre>
 
 	
 	</div>
@@ -208,9 +409,11 @@ int main(void)
 	
 	
 		<h3 id="使用-snap-安装软件时返回错误信息"><a href="#使用-snap-安装软件时返回错误信息" class="headerlink" title="使用 snap 安装软件时返回错误信息"></a>使用 snap 安装软件时返回错误信息</h3><p>错误关键字如下:</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">dial unix  &#x2F;run&#x2F;snapd.socket: connect: no such file or directory<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">dial unix  /run/snapd.socket: connect: no such <span class="token function">file</span> or directory
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>解决方法是重启本地 snap 服务, 命令如下:</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$: sudo systemctl restart snapd.service    &#x2F;&#x2F;重启本地 snap 服务<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">$: <span class="token function">sudo</span> systemctl restart snapd.service    //重启本地 snap 服务
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 	
 
@@ -224,9 +427,11 @@ int main(void)
 	
 	
 		<h3 id="使用-snap-安装软件时返回错误信息"><a href="#使用-snap-安装软件时返回错误信息" class="headerlink" title="使用 snap 安装软件时返回错误信息"></a>使用 snap 安装软件时返回错误信息</h3><p>错误关键字如下:</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">dial unix  &#x2F;run&#x2F;snapd.socket: connect: no such file or directory<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">dial unix  /run/snapd.socket: connect: no such <span class="token function">file</span> or directory
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>解决方法是重启本地 snap 服务, 命令如下:</p>
-<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$: sudo systemctl restart snapd.service    &#x2F;&#x2F;重启本地 snap 服务<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<pre class="line-numbers language-bash"><code class="language-bash">$: <span class="token function">sudo</span> systemctl restart snapd.service    //重启本地 snap 服务
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 	
 	</div>
@@ -527,11 +732,12 @@ int main(void)
   <div class="row">
 	
 	
-		<h3 id="Google-Chrome-离线下载地址-x64-windows"><a href="#Google-Chrome-离线下载地址-x64-windows" class="headerlink" title="Google Chrome 离线下载地址(x64_windows):"></a>Google Chrome 离线下载地址(x64_windows):</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">https:&#x2F;&#x2F;www.google.com&#x2F;chrome&#x2F;browser&#x2F;index.html?standalone&#x3D;1&amp;platform&#x3D;win64<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h3 id="Google-Chrome-离线下载地址-x86-windows"><a href="#Google-Chrome-离线下载地址-x86-windows" class="headerlink" title="Google Chrome 离线下载地址(x86_windows):"></a>Google Chrome 离线下载地址(x86_windows):</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">https:&#x2F;&#x2F;www.google.com&#x2F;chrome&#x2F;browser&#x2F;index.html?standalone&#x3D;1&amp;platform&#x3D;win<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h3 id="Microsoft-Edge-浏览器离线下载地址"><a href="#Microsoft-Edge-浏览器离线下载地址" class="headerlink" title="Microsoft Edge 浏览器离线下载地址:"></a>Microsoft Edge 浏览器离线下载地址:</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">https:&#x2F;&#x2F;www.microsoft.com&#x2F;zh-cn&#x2F;edge&#x2F;business&#x2F;download<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+		<h3 id="Google-Chrome-离线下载地址-x64-windows"><a href="#Google-Chrome-离线下载地址-x64-windows" class="headerlink" title="Google Chrome 离线下载地址(x64_windows):"></a>Google Chrome 离线下载地址(x64_windows):</h3><pre class="line-numbers language-bash"><code class="language-bash">https://www.google.com/chrome/browser/index.html?standalone<span class="token operator">=</span>1<span class="token operator">&amp;</span>platform<span class="token operator">=</span>win64
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="Google-Chrome-离线下载地址-x86-windows"><a href="#Google-Chrome-离线下载地址-x86-windows" class="headerlink" title="Google Chrome 离线下载地址(x86_windows):"></a>Google Chrome 离线下载地址(x86_windows):</h3><pre class="line-numbers language-bash"><code class="language-bash">https://www.google.com/chrome/browser/index.html?standalone<span class="token operator">=</span>1<span class="token operator">&amp;</span>platform<span class="token operator">=</span>win
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="Microsoft-Edge-浏览器离线下载地址"><a href="#Microsoft-Edge-浏览器离线下载地址" class="headerlink" title="Microsoft Edge 浏览器离线下载地址:"></a>Microsoft Edge 浏览器离线下载地址:</h3><pre class="line-numbers language-bash"><code class="language-bash">https://www.microsoft.com/zh-cn/edge/business/download
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 	
 
@@ -544,11 +750,12 @@ int main(void)
   <div class="row">
 	
 	
-		<h3 id="Google-Chrome-离线下载地址-x64-windows"><a href="#Google-Chrome-离线下载地址-x64-windows" class="headerlink" title="Google Chrome 离线下载地址(x64_windows):"></a>Google Chrome 离线下载地址(x64_windows):</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">https:&#x2F;&#x2F;www.google.com&#x2F;chrome&#x2F;browser&#x2F;index.html?standalone&#x3D;1&amp;platform&#x3D;win64<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h3 id="Google-Chrome-离线下载地址-x86-windows"><a href="#Google-Chrome-离线下载地址-x86-windows" class="headerlink" title="Google Chrome 离线下载地址(x86_windows):"></a>Google Chrome 离线下载地址(x86_windows):</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">https:&#x2F;&#x2F;www.google.com&#x2F;chrome&#x2F;browser&#x2F;index.html?standalone&#x3D;1&amp;platform&#x3D;win<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
-<h3 id="Microsoft-Edge-浏览器离线下载地址"><a href="#Microsoft-Edge-浏览器离线下载地址" class="headerlink" title="Microsoft Edge 浏览器离线下载地址:"></a>Microsoft Edge 浏览器离线下载地址:</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">https:&#x2F;&#x2F;www.microsoft.com&#x2F;zh-cn&#x2F;edge&#x2F;business&#x2F;download<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+		<h3 id="Google-Chrome-离线下载地址-x64-windows"><a href="#Google-Chrome-离线下载地址-x64-windows" class="headerlink" title="Google Chrome 离线下载地址(x64_windows):"></a>Google Chrome 离线下载地址(x64_windows):</h3><pre class="line-numbers language-bash"><code class="language-bash">https://www.google.com/chrome/browser/index.html?standalone<span class="token operator">=</span>1<span class="token operator">&amp;</span>platform<span class="token operator">=</span>win64
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="Google-Chrome-离线下载地址-x86-windows"><a href="#Google-Chrome-离线下载地址-x86-windows" class="headerlink" title="Google Chrome 离线下载地址(x86_windows):"></a>Google Chrome 离线下载地址(x86_windows):</h3><pre class="line-numbers language-bash"><code class="language-bash">https://www.google.com/chrome/browser/index.html?standalone<span class="token operator">=</span>1<span class="token operator">&amp;</span>platform<span class="token operator">=</span>win
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="Microsoft-Edge-浏览器离线下载地址"><a href="#Microsoft-Edge-浏览器离线下载地址" class="headerlink" title="Microsoft Edge 浏览器离线下载地址:"></a>Microsoft Edge 浏览器离线下载地址:</h3><pre class="line-numbers language-bash"><code class="language-bash">https://www.microsoft.com/zh-cn/edge/business/download
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 	
 	</div>
@@ -578,13 +785,14 @@ int main(void)
 	
 	
 		<p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new &quot;My New Post&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo server
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo generate
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 	
 
 	</div>
@@ -597,13 +805,14 @@ int main(void)
 	
 	
 		<p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo new &quot;My New Post&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo new <span class="token string">"My New Post"</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo server<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo server
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">$ hexo generate<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><pre class="line-numbers language-bash"><code class="language-bash">$ hexo generate
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 	
 	</div>
   <a type="button" href="/2021/08/29/hello-world/#more" class="btn btn-default more">Read More</a>
@@ -647,6 +856,8 @@ int main(void)
 		<h4>Categories</h4>
 		<ul class="tag_box inline list-unstyled">
 		
+			<li><a href="/categories/Hexo/">Hexo<span>1</span></a></li>
+		
 			<li><a href="/categories/Linux/">Linux<span>2</span></a></li>
 		
 			<li><a href="/categories/软件下载/">软件下载<span>1</span></a></li>
@@ -664,6 +875,8 @@ int main(void)
 		
 			<li><a href="/tags/Browser/">Browser<span>1</span></a></li>
 		
+			<li><a href="/tags/hexo-plugin/">hexo-plugin<span>1</span></a></li>
+		
 			<li><a href="/tags/snap/">snap<span>1</span></a></li>
 		
 		 
@@ -676,6 +889,10 @@ int main(void)
 <div class="widget">
   <h4>Recent Posts</h4>
   <ul class="entry list-unstyled">
+    
+      <li>
+        <a href="/2021/09/04/hexo-prism-plugin/" ><i class="fa fa-file-o"></i>hexo-prism-plugin</a>
+      </li>
     
       <li>
         <a href="/2021/09/04/TestCodeHighlight/" ><i class="fa fa-file-o"></i>TestCodeHighlight</a>
@@ -691,10 +908,6 @@ int main(void)
     
       <li>
         <a href="/2021/09/01/获取Chrome和Edge浏览器离线安装包/" ><i class="fa fa-file-o"></i>Chrome和Edge浏览器离线下载</a>
-      </li>
-    
-      <li>
-        <a href="/2021/08/29/hello-world/" ><i class="fa fa-file-o"></i>Hello World</a>
       </li>
     
   </ul>
