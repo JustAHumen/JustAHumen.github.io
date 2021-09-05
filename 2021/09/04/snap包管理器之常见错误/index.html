@@ -123,10 +123,13 @@
 	<div class="mypage">		
 	  		
 
-	  <h3 id="使用-snap-安装软件时返回错误信息"><a href="#使用-snap-安装软件时返回错误信息" class="headerlink" title="使用 snap 安装软件时返回错误信息"></a>使用 snap 安装软件时返回错误信息</h3><p>输出的错误信息中包含如下关键字:</p>
+	  <p>使用 snap 包管理器时遇到的常见问题及解决方法.</p>
+<span id="more"></span>
+
+<h3 id="使用-snap-安装软件时返回错误信息"><a href="#使用-snap-安装软件时返回错误信息" class="headerlink" title="使用 snap 安装软件时返回错误信息"></a>使用 snap 安装软件时返回错误信息</h3><p>错误信息, 输出的错误信息中包含如下关键字:</p>
 <pre class="line-numbers language-bash"><code class="language-bash">dial unix  /run/snapd.socket: connect: no such <span class="token function">file</span> or directory
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>解决方法是重启本地 snap 服务, 命令如下:</p>
+<p>解决方法, 重启本地 snap 服务, 命令如下:</p>
 <pre class="line-numbers language-bash"><code class="language-bash">$: <span class="token function">sudo</span> systemctl restart snapd.service    //重启本地 snap 服务
 <span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
