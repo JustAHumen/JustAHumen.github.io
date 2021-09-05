@@ -4,19 +4,6 @@
   
     
     <entry>
-      <title>demo</title>
-      <link href="/2021/09/05/demo/"/>
-      <url>/2021/09/05/demo/</url>
-      
-        <content type="html"><![CDATA[<pre class="line-numbers language-c"><code class="language-c"><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;stdio.h></span></span><span class="token macro property">#<span class="token directive keyword">ifdef</span> (_cplusplus)</span><span class="token macro property">#<span class="token directive keyword">include</span> <span class="token string">&lt;uchar.h></span></span><span class="token macro property">#<span class="token directive keyword">endif</span></span><span class="token keyword">int</span> <span class="token function">main</span><span class="token punctuation">(</span><span class="token keyword">void</span><span class="token punctuation">)</span><span class="token punctuation">{</span>        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"WWWWWWW"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>        <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>Hexo插件之hexo-prism-plugin</title>
       <link href="/2021/09/04/Hexo%E6%8F%92%E4%BB%B6%E4%B9%8Bhexo-prism-plugin/"/>
       <url>/2021/09/04/Hexo%E6%8F%92%E4%BB%B6%E4%B9%8Bhexo-prism-plugin/</url>
