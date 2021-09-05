@@ -156,7 +156,7 @@ $ <span class="token function">npm</span> <span class="token function">install</
 <h3 id="使用插件过程中遇到的配置错误问题"><a href="#使用插件过程中遇到的配置错误问题" class="headerlink" title="使用插件过程中遇到的配置错误问题"></a><strong>使用插件过程中遇到的配置错误问题</strong></h3><p>安装 <code>hexo-prism-plugin</code> 插件后, 修改 <code>_config.yml</code> 配置文件时引用了不存在的主题名称, 报错如下:</p>
 <pre class="line-numbers language-bash"><code class="language-bash">$: hexo g
 INFO  Validating config
-ERROR <span class="token operator">&amp;</span><span class="token comment" spellcheck="true">#123;</span>
+ERROR <span class="token punctuation">{</span>
   err: Error: Invalid theme Gruvbox Dark. Valid Themes: 
   coy,dark,funky,okaidia,solarizedlight,tomorrow,twilight,a11y-dark,atom-dark,base16-ateliersulphurpool.light,cb,coldark-cold,coldark-dark,coy-without-shadows,darcula,dracula,duotone-dark,duotone-earth,duotone-forest,duotone-light,duotone-sea,duotone-space,ghcolors,gruvbox-dark,gruvbox-light,holi-theme,hopscotch,lucario,material-dark,material-light,material-oceanic,night-owl,nord,pojoaque,shades-of-purple,synthwave84,vs,vsc-dark-plus,xonokai,default,
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -222,7 +222,8 @@ default
 
     
     
-    <a type="button" class="btn btn-default disabled"><i class="fa fa-arrow-circle-o-left"></i>Prev</a>
+    <a href="/2021/09/05/demo/" type="button" class="btn btn-default"><i
+                class="fa fa-arrow-circle-o-left"></i> Prev</a>
     
 
     <a href="/" type="button" class="btn btn-default"><i class="fa fa-home"></i>Home</a>
