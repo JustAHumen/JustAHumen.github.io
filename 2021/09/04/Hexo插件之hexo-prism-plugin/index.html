@@ -156,15 +156,14 @@ $ <span class="token function">npm</span> <span class="token function">install</
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ol>
-<h3 id="使用插件过程中遇到的配置错误问题"><a href="#使用插件过程中遇到的配置错误问题" class="headerlink" title="使用插件过程中遇到的配置错误问题"></a>使用插件过程中遇到的配置错误问题</h3><ul>
-<li>主题配置错误, 安装 <code>hexo-prism-plugin</code> 插件后, 修改 <code>_config.yml</code> 配置文件时引用了不存在的主题名称, 报错如下:<pre class="line-numbers language-bash"><code class="language-bash">$: hexo g
+<hr>
+<h3 id="使用插件过程中遇到的配置错误问题"><a href="#使用插件过程中遇到的配置错误问题" class="headerlink" title="使用插件过程中遇到的配置错误问题"></a>使用插件过程中遇到的配置错误问题</h3><p>安装 <code>hexo-prism-plugin</code> 插件后, 修改 <code>_config.yml</code> 配置文件时引用了不存在的主题名称, 报错如下:</p>
+<pre class="line-numbers language-bash"><code class="language-bash">$: hexo g
 INFO  Validating config
 ERROR <span class="token punctuation">{</span>
-err: Error: Invalid theme Gruvbox Dark. Valid Themes: 
-coy,dark,funky,okaidia,solarizedlight,tomorrow,twilight,a11y-dark,atom-dark,base16-ateliersulphurpool.light,cb,coldark-cold,coldark-dark,coy-without-shadows,darcula,dracula,duotone-dark,duotone-earth,duotone-forest,duotone-light,duotone-sea,duotone-space,ghcolors,gruvbox-dark,gruvbox-light,holi-theme,hopscotch,lucario,material-dark,material-light,material-oceanic,night-owl,nord,pojoaque,shades-of-purple,synthwave84,vs,vsc-dark-plus,xonokai,default,
+  err: Error: Invalid theme Gruvbox Dark. Valid Themes: 
+  coy,dark,funky,okaidia,solarizedlight,tomorrow,twilight,a11y-dark,atom-dark,base16-ateliersulphurpool.light,cb,coldark-cold,coldark-dark,coy-without-shadows,darcula,dracula,duotone-dark,duotone-earth,duotone-forest,duotone-light,duotone-sea,duotone-space,ghcolors,gruvbox-dark,gruvbox-light,holi-theme,hopscotch,lucario,material-dark,material-light,material-oceanic,night-owl,nord,pojoaque,shades-of-purple,synthwave84,vs,vsc-dark-plus,xonokai,default,
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-</ul>
 <p>如上，在执行 <code>hexo g</code> 命令时出现的错误信息可知, <code>hexo-prism-plugin</code> 允许修改为以下列表中的主题名称:</p>
 <pre class="line-numbers language-bash"><code class="language-bash">coy
 dark
@@ -207,9 +206,7 @@ vsc-dark-plus
 xonokai
 default
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<ul>
-<li>hexo-prism-plugin不支持大括号显示修复<br>请参考文章：<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/286242516">https://zhuanlan.zhihu.com/p/286242516</a></li>
-</ul>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/286242516">修复hexo-prism-plugin不支持大括号显示</a></p>
 
 	  <div class="article-footer-copyright">
 
@@ -265,7 +262,7 @@ default
 <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 <script src="https://cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script>
-var valineConfig = {"enable":false,"appId":"xxx","appKey":"xxx","placeholder":"提交评论时留下邮箱收到回复后将自动通知","visitor":true,"avatar":"monsterid","requiredFields":["nick","mail"]}
+var valineConfig = {"enable":false,"appId":"xxx","appKey":"xxx","placeholder":"提交评论时留下邮箱收到回复后将自动通知","visitor":false,"avatar":"monsterid","requiredFields":["nick","mail"]}
 valineConfig.el='#vcomment';
 new Valine(valineConfig);
     // new Valine({
@@ -274,7 +271,7 @@ new Valine(valineConfig);
     //     appKey: "",
     //     placeholder: "提交评论时留下邮箱收到回复后将自动通知",
     //     avatar:"monsterid",
-    //     visitor: "true",
+    //     visitor: "false",
     //     requiredFields: "nick,mail".split(','),
     // });
 </script>
